@@ -42,14 +42,14 @@ return [
             'default'     => 'default',
             'aliases'     => [],
             'databases'   => [
-                'default' => ['connection' => 'sqlite']
+                'default' => ['connection' => 'mysql']
             ],
             'connections' => [
-                'sqlite' => [
-                    'driver'     => \Spiral\Database\Driver\SQLite\SQLiteDriver::class,
-                    'connection' => 'sqlite:@runtime/database.db',
-                    'username'   => '',
-                    'password'   => '',
+                'mysql' => [
+                    'driver'     => \Spiral\Database\Driver\MySQL\MySQLDriver::class,
+                    'connection' => $_ENV['DB_DSN'],
+                    'username'   => $_ENV['DB_USERNAME'],
+                    'password'   => $_ENV['DB_PASSWORD'],
                 ],
             ],
             // 'query-logger' => \Yiisoft\Yii\Cycle\Logger\StdoutQueryLogger::class,
